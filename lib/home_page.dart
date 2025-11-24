@@ -5,11 +5,14 @@ class HomePage extends StatelessWidget {
 
   static const teal = Color(0xFF2BCAB0);
 
-  List<Map<String, dynamic>> get items => List.generate(6, (i) => {
-        'title': 'Help Lorem ipsum ${i + 1}',
-        'subtitle':
-            'Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod',
-      });
+  List<Map<String, dynamic>> get items => List.generate(
+    6,
+    (i) => {
+      'title': 'Help Lorem ipsum ${i + 1}',
+      'subtitle':
+          'Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod',
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +20,19 @@ class HomePage extends StatelessWidget {
       length: 3,
       initialIndex: 1,
       child: Scaffold(
-        backgroundColor: teal, // <<—— Body warna teal
+        backgroundColor: teal,
         body: Column(
           children: [
-            // ---------------- APP BAR CUSTOM ----------------
             Container(
-              padding:
-                  const EdgeInsets.only(top: 32, left: 12, right: 12, bottom: 12),
+              padding: const EdgeInsets.only(
+                top: 32,
+                left: 12,
+                right: 12,
+                bottom: 12,
+              ),
               decoration: const BoxDecoration(
                 color: teal,
-                boxShadow: [
-                  BoxShadow(color: Colors.black26, blurRadius: 5),
-                ],
+                boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 5)],
               ),
               child: SafeArea(
                 bottom: false,
@@ -57,10 +61,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 10),
-
-            // ---------------- CONTENT ----------------
             Expanded(
               child: Container(
                 width: double.infinity,
@@ -88,7 +89,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // ------------------- CARD ITEM -------------------
   Widget buildCard(Map<String, dynamic> it) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
@@ -101,12 +101,11 @@ class HomePage extends StatelessWidget {
             color: Color(0x22000000),
             blurRadius: 6,
             offset: Offset(0, 3),
-          )
+          ),
         ],
       ),
       child: Row(
         children: [
-          // ICON BOX
           Container(
             width: 65,
             height: 65,
@@ -114,13 +113,13 @@ class HomePage extends StatelessWidget {
               color: teal,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(Icons.photo_camera_outlined,
-                color: Colors.white, size: 30),
+            child: const Icon(
+              Icons.photo_camera_outlined,
+              color: Colors.white,
+              size: 30,
+            ),
           ),
-
           const SizedBox(width: 12),
-
-          // TEXT CONTENT
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
